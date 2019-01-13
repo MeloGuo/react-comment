@@ -25,11 +25,11 @@ body {
 .comment-field {
   margin-bottom: 15px;
   display: flex;
+  flex-direction: column;
 }
 
 .comment-field .comment-field-name {
   display: flex;
-  flex-basis: 100px;
   font-size: 14px;
 }
 
