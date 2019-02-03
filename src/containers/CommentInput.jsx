@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CommentInput from '../components/CommentInput'
-import { addComment } from '../reducers/comment'
+import { addCommentAsync } from '../reducers/comment'
 
 class CommentInputContainer extends Component {
   constructor (props) {
@@ -60,7 +60,7 @@ class CommentInputContainer extends Component {
 const mapStateToProps = (state) => ({ comments: state.comments })
 const mapDispatchToProps = (dispatch) => ({
   onSubmit (comment) {
-    dispatch(addComment(comment))
+    dispatch(addCommentAsync(comment))
   }
 })
 

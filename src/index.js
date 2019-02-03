@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 import CommentApp from './containers/CommentApp'
 import commentsReducer from './reducers/comment'
 import './index.css'
 
-const store = createStore(commentsReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(commentsReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
