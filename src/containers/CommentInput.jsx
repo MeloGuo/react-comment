@@ -9,6 +9,9 @@ class CommentInputContainer extends Component {
     this.state = {
       username: ''
     }
+
+    this._saveUsername = this._saveUsername.bind(this)
+    this.handleSubmitComment = this.handleSubmitComment.bind(this)
   }
 
   componentWillMount () {
@@ -47,9 +50,9 @@ class CommentInputContainer extends Component {
   render () {
     return (
       <CommentInput
-        username={this.username}
-        onUsernameInputBlur={this._saveUsername.bind(this)}
-        onSubmit={this.handleSubmitComment.bind(this)} />
+        username={this.state.username}
+        onUsernameInputBlur={this._saveUsername}
+        onSubmit={this.handleSubmitComment} />
     )
   }
 }
